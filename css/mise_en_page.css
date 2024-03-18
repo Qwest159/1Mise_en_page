@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+ 
+/* ----DEBUT CSS Pour Toutes Les Pages---- */
+
+html 
+{
+    /* Permet de stocker la couleur dans la variable */
+    --bordure: rgb(101, 0, 0);
+}
+body
+{
+    font-family: "Roboto Flex", sans-serif;
+    min-width: 800px;
+    background-image: url(../images/fond.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+  
+}
+img
+{
+    vertical-align: middle;
+}
+figure
+{
+    text-align: center;
+}
+nav
+{
+    background-color: rgb(84, 84, 84);
+    padding: 0.7em 0;
+}
+nav ul 
+{
+    /* // Permet de mettre les elements sur une ligne */
+    display: flex;
+    /* Espacement entre les mots(gap) */
+    gap: 2em;
+    /* Centre les elements(a utiliser avce flex) */
+    justify-content: center;
+}
+nav a
+{
+    /* enleve le surlignement des liens: */
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+    text-wrap: nowrap;
+}
+h1
+{
+    font-size: 200%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+main p 
+{
+    padding: 0.7em;
+}
+main
+{
+    border: solid;
+    border-top: none;
+    font-size: larger;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+main a
+{
+    text-decoration: none;
+    /* Pour utilisez la variable => var(--NOM_DE_LA_VARIABLE) , voir en dessous exemple */
+    color: var(--bordure);
+    font-weight: 700;
+}
+footer
+{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight:300;
+  
+}
+footer p:last-child
+{
+    margin-top: 1.5%;
+    color: var(--bordure);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+main h1::first-letter
+{
+    font-size: 200%;
+    color: var(--bordure);
+}
+main p::first-letter
+{
+    font-size: 250%;
+    color: var(--bordure);
+}
+main#nouveau, main#classique, main#principale
+{
+    border-color: var(--bordure);
+    background-color: rgba(240, 240, 240,0.95);
+}
+/* ~~~~FIN CSS Pour Toutes Les Pages~~~~ */
+
+/* ----DEBUT Nouveautés---- */
+
+#nouveau p:last-child::first-letter
+{
+    letter-spacing: -0.1em;
+}
+/* ~~~~FIN Nouveautés~~~~ */
+
+
+/* ----DEBUT CONTACT---- */
+legend
+{
+    /* permet de centrer le texte par rapport a la ligne(contour) de fieldset */
+    position: absolute;
+    top: -0.6em;
+    left: 1em;
+    padding: 0 0.5em;
+    font-size: 150%;
+    color: var(--bordure);
+    background-color: rgba(240, 240, 240,1);
+}
+
+/* englobe le formulaire (div#border) */
+main#principale div#border
+{
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 2%;
+}
+/* englobe la 1ere partie qui contient les informations/données personnelles*/
+main#principale fieldset#first 
+{
+    position: relative;
+    padding: 3%;
+    border:solid var(--bordure);
+    border-radius: 1em;
+    margin-bottom: 2%;
+}
+main#principale fieldset#first div
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0.4em;
+}
+/* englobe la deuxieme partie qui contient les remarques/message */
+main#principale fieldset#second
+{
+    position: relative;
+    margin-top: 2em;
+    padding: 1em;
+    border:solid var(--bordure);
+    border-radius: 1em;
+   
+}
+main#principale footer p
+{
+    font-weight: 300;
+    color: black;
+}
+main#principale footer p::first-letter
+{
+    font-size: 130%;
+    font-weight: 300;
+    color: black;
+}
+main#principale #second textarea
+{
+    width: 95%;
+    max-height: 12em; 
+    resize: both;
+
+}
+/* ce iframe = la carte/map */
+iframe
+{
+    width: 100%;
+}
+input[type="submit"]
+{
+    font-weight: 700;
+    margin-top: 2%;
+    border-radius: 1em;
+    padding: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(70, 70, 70);
+    color: rgb(218, 217, 217);
+    box-shadow: 3px 3px 5px #000000;
+    border-color: white;
+}
+main fieldset::first-letter
+{
+    font-size: 200%;
+    color: var(--bordure);
+}
+/* ~~~~FIN Nouveautés~~~~ */
+
+/* ----DEBUT Nos classiques---- */
+tr
+{
+    border: solid var(--bordure);
+    text-align: center;
+}
+table 
+{
+    margin: auto;
+    width: 90%;
+    margin-bottom: 0.5em;
+}
+td
+{
+    border: solid var(--bordure);
+    padding:3px 0px;
+    vertical-align: middle;
+}
+table tr td img
+{
+    width: 60%;
+    box-shadow: 0px 5px 25px #000000;
+}
+
+/* ATTENTION si rajout d'autre <p> EN DESSOUS DU tableau */
+/* dans ce cas la => rajout d'une div ou autre qui englobe la partie au dessus du tableau */
+main#classique p:last-of-type
+{
+    /* espacement entre le dernier p et le tableau */
+    margin-bottom: 1%;
+}
+table  td img:hover
+{
+    box-shadow: 0px 5px 25px #ff0000;
+}
+/* ~~~~FIN Nos classiques~~~~ */
+
+/* ----DEBUT INDEX---- */
+#index #footerindex p:not(.dernier)::first-letter 
+{
+    font-size: 100%;
+    color: #000000; 
+}
+
+/* je m'adresse a tous les p dans le footer sauf le dernier*/
+#index #footerindex p:not(.dernier)
+{
+    line-height: 0.1%;  
+}
+/* permet de mettre le 1er p en gras */
+#index #footerindex p:first-child
+{
+    font-weight: 900;
+    font-size: 130%;
+}
+#index #footerindex .dernier::first-letter
+{
+    font-size: 130%;
+    font-weight: 500;
+}
+#index 
+{
+    border: none;
+}
